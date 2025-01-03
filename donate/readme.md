@@ -6,3 +6,4 @@
 - [USDC] `0xb9a25c9c16596E3262566a314023B7CAbC407586`
 - [SOL] `FpqK6Ev5vGqeZY6BeRXrUpoqFGiw74E8T6VbkqF7XX5h`
 - [PPC] (segwit)`pc1qgzw20pd60qw5rlajad2gpqztn09u67wkjjd7v2`
+- [HNS] `hs1qdarmz546avp5g5p76savpaf29lgnggzjc5tgn7`
