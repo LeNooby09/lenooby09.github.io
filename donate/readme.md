@@ -1,9 +1,8 @@
-###### (pick any address that you find funny)
-- [BTC] (taproot)`bc1pc72gffyp42p9xgjau625f0y2g6n83zy0xkwtsdf8860t6mzq763qdqnqsw`
-- [XMR] `45sex8aBwyBZXc8XFqzzGXNVHvC1dkcDEb3pSM8XMC6bjJ3VdbKMSeyWRvXwicqUWFMZgCyy5r4BeLMP5WhqGzwpG8e6iKB`
-- [ETH] `0xb9a25c9c16596E3262566a314023B7CAbC407586`
-- [FIRO] (spark)`sm13mcuj969mycqehull6j3xncy0n6sw7qvg6w9tlaw72luhj8ynlhml47xf99fpe2gsewjt2768htvlwzhe8mmn8pxstzf29ue6sdjvlqvj2mmlrwfl8ak02k8nl0vklqvlfm8n8sk5qkgq`
+- <img src="../88x31/bitcoin_catppuccin_macchiato.png"/>[BTC] (taproot)`bc1pc72gffyp42p9xgjau625f0y2g6n83zy0xkwtsdf8860t6mzq763qdqnqsw`
+- <img src="../88x31/monero_catppuccin_macchiato.png"/>[XMR] `45sex8aBwyBZXc8XFqzzGXNVHvC1dkcDEb3pSM8XMC6bjJ3VdbKMSeyWRvXwicqUWFMZgCyy5r4BeLMP5WhqGzwpG8e6iKB`
+- <img src="../88x31/ethereum_catppuccin_macchiato.png"/>[ETH] `0xb9a25c9c16596E3262566a314023B7CAbC407586`
+- <img src="../88x31/firo_catppuccin_macchiato.png"/>[FIRO] (spark)`sm13mcuj969mycqehull6j3xncy0n6sw7qvg6w9tlaw72luhj8ynlhml47xf99fpe2gsewjt2768htvlwzhe8mmn8pxstzf29ue6sdjvlqvj2mmlrwfl8ak02k8nl0vklqvlfm8n8sk5qkgq`
 - [USDC] `0xb9a25c9c16596E3262566a314023B7CAbC407586`
-- [SOL] `FpqK6Ev5vGqeZY6BeRXrUpoqFGiw74E8T6VbkqF7XX5h`
-- [PPC] (segwit)`pc1qgzw20pd60qw5rlajad2gpqztn09u67wkjjd7v2`
-- [HNS] `hs1qdarmz546avp5g5p76savpaf29lgnggzjc5tgn7`
+- <img src="../88x31/solana_catppuccin_macchiato.png"/>[SOL] `FpqK6Ev5vGqeZY6BeRXrUpoqFGiw74E8T6VbkqF7XX5h`
+- <img src="../88x31/peercoin_catppuccin_macchiato.png"/>[PPC] (segwit)`pc1qgzw20pd60qw5rlajad2gpqztn09u67wkjjd7v2`
+- <img src="../88x31/handshake_catppuccin_macchiato.png"/>[HNS] `hs1qdarmz546avp5g5p76savpaf29lgnggzjc5tgn7`
