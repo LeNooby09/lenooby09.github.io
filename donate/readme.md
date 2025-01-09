@@ -6,3 +6,4 @@
 - <img src="../88x31/solana_catppuccin_macchiato.png"/>[SOL] `FpqK6Ev5vGqeZY6BeRXrUpoqFGiw74E8T6VbkqF7XX5h`
 - <img src="../88x31/peercoin_catppuccin_macchiato.png"/>[PPC] (segwit)`pc1qgzw20pd60qw5rlajad2gpqztn09u67wkjjd7v2`
 - <img src="../88x31/handshake_catppuccin_macchiato.png"/>[HNS] `hs1qdarmz546avp5g5p76savpaf29lgnggzjc5tgn7`
+- [XNO] `nano_17376pr3x4m35jxqenm3hs9tg9mc53zg8e35frsq3zta8wdjs8yzpjsumss1`
