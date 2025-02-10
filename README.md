@@ -28,7 +28,7 @@ Theo, Primeagen and PirateSoftware
 | Stats: | Description |
 |---|---|
 | Work: | unemployed |
-| Side Projects: | 10 |
+| Side Projects: | 12 |
 | Current Project: | Encrypted Communication Protocol & hacking our schools wifi |
 | Languages: | Kotlin, Python, C, TypeScript |
 
