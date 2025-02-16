@@ -47,11 +47,6 @@ being a great friend and helping me out when I needed it the most. ![<3](88x31/p
 
 ### Friends:
 
-[bytexenon](https://bytexenon.github.io)<img alt="&lt;3" height="20" src="88x31/popup_%3C3_catppuccin_macchiato.png" width="20"/>
-my beloved
-
-
-
 [<img alt="meow_d" height="31" src="https://meow-d.github.io/assets/images/buttons/meow_d.webp" width="88"/>](https://meow-d.github.io/)   [<img alt="onzecki" height="31" src="https://onz.ee/assets/88x31s/avif/onzecki.avif" width="88"/>](https://onz.ee)
 
 [Mey](https://lizainslie.dev)  [Fryl](https://fryl.dev)   [Luna](https://imlunahey.com)   [H4rl](https://h4rl.dev)
