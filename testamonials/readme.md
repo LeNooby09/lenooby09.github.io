@@ -6,6 +6,8 @@
 
 "`Damn, bro is turning into a Linux neckbeard more and more every day 💀💀💀`" - bytexenon
 
+"`I was adding your button to my site and just saw the qutoes part of your page and I love that idea lmao`" - aria
+
 # Quotes
 
 "`"im straight but my boyfriend's gay"`" - unknown
