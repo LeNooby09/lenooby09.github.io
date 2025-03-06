@@ -66,7 +66,7 @@ being a great friend and helping me out when I needed it the most. ![<3](88x31/p
 
 | Signal | Discord | ~~Twitter~~ | BlueSky | Last.fm | Anilist | Matrix | E-Mail | KeyBase | Telegram |
 |---|---|---|---|---|---|---|---|
-| [LeNooby.09](https://signal.me/#eu/1M8fb4pPoNv1y8mC9myRFNTI_MZOZejW-Vm-6ENcr6CjFsCWh0xIi6TapPFi5mwP) | [Server](discord) | [~~@LeNooby09~~](https://twitter.com/lenooby09) | [@LeNooby09.tech](https://bsky.app/profile/did:plc:vcias3ih35djy2t3tgjd7rwb) | [@LeNooby09](https://www.last.fm/user/lenooby09) | [@LeNooby09](https://anilist.co/user/LeNooby09/) | [LeNooby09](lenooby09:matrix.org) | contact@lenooby09.tech | [@LeNooby09](https://keybase.io/lenooby09) | @LeNooby09 |
+| [LeNooby.09](https://signal.me/#eu/NVKWG8sYA6qPwqYvDwxZvZFi8PTNYTvqFtITx0_fEfqP0VkC4fNDU5-Y0zNkSbN9) | [Server](discord) | [~~@LeNooby09~~](https://twitter.com/lenooby09) | [@LeNooby09.tech](https://bsky.app/profile/did:plc:vcias3ih35djy2t3tgjd7rwb) | [@LeNooby09](https://www.last.fm/user/lenooby09) | [@LeNooby09](https://anilist.co/user/LeNooby09/) | [LeNooby09](lenooby09:matrix.org) | contact@lenooby09.tech | [@LeNooby09](https://keybase.io/lenooby09) | @LeNooby09 |
 
 ###### Session:
 `05ba4c3149c2de3b9a3da4726c6d48b4f41d53282eb73beb80de2dab454b5a0f72`
