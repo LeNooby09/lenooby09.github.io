@@ -30,9 +30,7 @@
 ```text
 
 alias edit='nano ~/.bashrc && source ~/.bashrc'
-
-alias direct-connect='sudo ip addr add 192.168.1.2/24 dev enp0s31f6 && sudo ip link set enp0s31f6 up && sleep 1 && ssh user@192.168.1.1'
-alias stop-direct-connect='sudo ip addr del 192.168.1.2/24 dev enp0s31f6 && sudo ip link set enp0s31f6 down'
+alias yuri=paru
 
 # cron-job
 # */5 * * * * getip
@@ -43,8 +41,8 @@ alias stop-direct-connect='sudo ip addr del 192.168.1.2/24 dev enp0s31f6 && sudo
 
 # get local IP
 #if [ "$(ip route get 1.1.1.1 2>&1)" == "RTNETLINK answers: Network is unreachable" ];\
- then echo -e "offline" > $ip_cache_local;\
- else ip route get 1.1.1.1 | awk -F "src " 'NR == 1{ split($2, a," ");print a[1]}' > $ip_cache_local; fi
+# then echo -e "offline" > $ip_cache_local;\
+# else ip route get 1.1.1.1 | awk -F "src " 'NR == 1{ split($2, a," ");print a[1]}' > $ip_cache_local; fi
 
 # cache for faster response
 ip_cache_public=~/.cache/ip_public
