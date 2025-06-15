@@ -2,9 +2,9 @@
 
 ---
 
-https://trocador.app/anonpay?ticker_to=xno&network_to=Mainnet&address=nano_17376pr3x4m35jxqenm3hs9tg9mc53zg8e35frsq3zta8wdjs8yzpjsumss1&ref=sqKNYGZbRl&direct=True&name=LeNooby09
+[Trocador](https://trocador.app/anonpay?ticker_to=xno&network_to=Mainnet&address=nano_17376pr3x4m35jxqenm3hs9tg9mc53zg8e35frsq3zta8wdjs8yzpjsumss1&ref=sqKNYGZbRl&direct=True&name=LeNooby09)
 
-https://tqzngtf2hybjbexznel6dhgsvbynjzezoybvtv6iofomx7gchqfssgqd.onion/anonpay?ticker_to=xno&network_to=Mainnet&address=nano_17376pr3x4m35jxqenm3hs9tg9mc53zg8e35frsq3zta8wdjs8yzpjsumss1&ref=sqKNYGZbRl&direct=True&name=LeNooby09
+[Trocador ONION](https://tqzngtf2hybjbexznel6dhgsvbynjzezoybvtv6iofomx7gchqfssgqd.onion/anonpay?ticker_to=xno&network_to=Mainnet&address=nano_17376pr3x4m35jxqenm3hs9tg9mc53zg8e35frsq3zta8wdjs8yzpjsumss1&ref=sqKNYGZbRl&direct=True&name=LeNooby09)
 
 ---
 
