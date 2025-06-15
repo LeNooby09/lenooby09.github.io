@@ -1,16 +1,7 @@
 ---
-
+import Dither from './../Backgrounds/Dither/Dither.tsx';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<div style={{width: '100%', height: '100%', position: 'absolute', top: 0, left: 0}}>
+	<Dither client:load/>
+</div>
