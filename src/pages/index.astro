@@ -3,6 +3,10 @@ import Dither from '../blocks/Backgrounds/Dither/Dither.tsx';
 import AnimatedTextBox from '../blocks/AnimatedTitle/AnimatedTextBox.tsx';
 import LetterGlitch from "../blocks/Backgrounds/LetterGlitch/LetterGlitch";
 import '../styles/global.css';
+
+const Formatted = `
+============================== <br/>
+`;
 ---
 
 <div style={{width: '100%', height: '100%', position: 'absolute', top: 0, left: 0}}>
@@ -16,4 +20,5 @@ import '../styles/global.css';
 	contentText={`
 
 `}
+	formattedContent={Formatted}
 />

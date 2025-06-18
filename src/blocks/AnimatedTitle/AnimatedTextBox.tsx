@@ -6,12 +6,14 @@ interface AnimatedTextBoxProps {
 	titleText: string;
 	contentText: string;
 	className?: string;
+	formattedContent?: string;
 }
 
 export default function AnimatedTextBox({
 																					titleText,
 																					contentText,
-																					className = ''
+																					className = '',
+																					formattedContent = ''
 																				}: AnimatedTextBoxProps) {
 	return (
 		<TextBox
@@ -26,6 +28,9 @@ export default function AnimatedTextBox({
 			<DecryptedText
 				text={contentText}
 			/>
+			{formattedContent && (
+				<div dangerouslySetInnerHTML={{__html: formattedContent}}/>
+			)}
 		</TextBox>
 	);
 }
