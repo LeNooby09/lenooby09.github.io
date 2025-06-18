@@ -2,8 +2,8 @@
 	Installed from https://reactbits.dev/ts/tailwind/
 */
 
-import {useEffect, useState, useRef} from "react";
-import {motion, type HTMLMotionProps} from "framer-motion";
+import {useEffect, useRef, useState} from "react";
+import {type HTMLMotionProps, motion} from "framer-motion";
 
 interface DecryptedTextProps extends HTMLMotionProps<"span"> {
 	text: string;
