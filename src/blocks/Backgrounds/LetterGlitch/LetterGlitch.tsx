@@ -7,7 +7,7 @@ import {useEffect, useRef} from "react";
 const LetterGlitch = ({
 												glitchColors = ["#5724b4", "#a05af6", "#5d0e7c"],
 												glitchSpeed = 100,
-												centerVignette = true,
+												centerVignette = false,
 												outerVignette = false,
 												smooth = true,
 											}: {
@@ -31,9 +31,9 @@ const LetterGlitch = ({
 	const context = useRef<CanvasRenderingContext2D | null>(null);
 	const lastGlitchTime = useRef(Date.now());
 
-	const fontSize = 16;
-	const charWidth = 10;
-	const charHeight = 20;
+	const fontSize = 10;
+	const charWidth = fontSize * 0.7;
+	const charHeight = fontSize * 1.2;
 
 	const lettersAndSymbols = [
 		"A",

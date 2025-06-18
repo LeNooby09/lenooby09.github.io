@@ -11,8 +11,8 @@
 }
 
 .text-box {
-	background-color: rgba(0.5, 0.3, 0.7, 0.1);
-	backdrop-filter: blur(15px);
+	background-color: rgba(0.5, 0.3, 0.7, 0.2);
+	backdrop-filter: blur(1.5px);
 	border-radius: 30px;
 	padding: 2rem;
 	max-width: calc(100% - 80px);
@@ -20,7 +20,7 @@
 	color: #e5c0f8;
 	box-shadow: 6px 4px 10px rgba(0.5, 0.3, 0.7, 0.2);
 	border: 1px solid rgba(255, 255, 255, 0.1);
-	font-family: 'Courier New', Courier, monospace;
+	font-family: monospace;
 	min-height: 200px;
 	display: flex;
 	flex-direction: column;
