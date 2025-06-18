@@ -1,6 +1,7 @@
 ---
 import Dither from '../blocks/Backgrounds/Dither/Dither.tsx';
 import TextBox from '../blocks/TextBox/TextBox.tsx';
+import DecryptedText from "../blocks/TextAnimations/DecryptedText/DecryptedText";
 ---
 
 <div style={{width: '100%', height: '100%', position: 'absolute', top: 0, left: 0}}>
@@ -9,6 +10,13 @@ import TextBox from '../blocks/TextBox/TextBox.tsx';
 
 <TextBox
   client:load
-  title="LeNooby09's site"
-  content="This is an example text that sits on top of the dither background without interfering with its reactivity."
-/>
+  title="LeNooby09's site">
+  <DecryptedText
+		text="Welcome to my website! This text is being decrypted with an animation."
+		animateOn="view"
+		speed={50}
+		maxIterations={10}
+		revealDirection="start"
+		client:load
+	/>
+</TextBox>
