@@ -2,7 +2,7 @@ import React, { type ReactNode } from 'react';
 import './TextBox.css';
 
 interface TextBoxProps {
-  title?: string;
+  title?: string | ReactNode;
   content?: string | ReactNode;
   className?: string;
   style?: React.CSSProperties;
@@ -11,7 +11,7 @@ interface TextBoxProps {
 
 export default function TextBox({
   title = 'HEADING',
-  content = 'content goes here',
+  content = 'CONTENT',
   className = '',
   style = {},
   children
@@ -21,7 +21,9 @@ export default function TextBox({
   return (
     <div className={`text-container ${className}`}>
       <div className="text-box" style={style}>
-        <h1>{title}</h1>
+        <h1 className="text-box-title">
+          {title}
+        </h1>
         {typeof contentToDisplay === 'string' ? <p>{contentToDisplay}</p> : contentToDisplay}
       </div>
     </div>

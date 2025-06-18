@@ -1,22 +1,14 @@
 ---
 import Dither from '../blocks/Backgrounds/Dither/Dither.tsx';
-import TextBox from '../blocks/TextBox/TextBox.tsx';
-import DecryptedText from "../blocks/TextAnimations/DecryptedText/DecryptedText";
+import AnimatedTextBox from '../blocks/AnimatedTitle/AnimatedTextBox.tsx';
 ---
 
 <div style={{width: '100%', height: '100%', position: 'absolute', top: 0, left: 0}}>
 	<Dither client:load/>
 </div>
 
-<TextBox
+<AnimatedTextBox
   client:load
-  title="LeNooby09's site">
-  <DecryptedText
-		text="Welcome to my website! This text is being decrypted with an animation."
-		animateOn="view"
-		sequential={true}
-		speed={50}
-		maxIterations={10}
-		client:load
-	/>
-</TextBox>
+  titleText="LeNooby09's site"
+  contentText="Welcome to my website! This text is being decrypted with an animation."
+/>
