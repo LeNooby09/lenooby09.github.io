@@ -24,7 +24,11 @@ export default function TextBox({
 				<h1 className="text-box-title">
 					{title}
 				</h1>
-				{typeof contentToDisplay === 'string' ? <p>{contentToDisplay}</p> : contentToDisplay}
+				{typeof contentToDisplay === 'string' ? (
+					<p style={{whiteSpace: 'pre-line'}}>
+						{contentToDisplay}
+					</p>
+				) : contentToDisplay}
 			</div>
 		</div>
 	);

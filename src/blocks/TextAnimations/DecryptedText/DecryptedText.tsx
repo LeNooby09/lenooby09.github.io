@@ -1,8 +1,4 @@
-/*
-	Installed from https://reactbits.dev/ts/tailwind/
-*/
-
-import {useEffect, useRef, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import {type HTMLMotionProps, motion} from "framer-motion";
 
 interface DecryptedTextProps extends HTMLMotionProps<"span"> {
@@ -21,7 +17,7 @@ interface DecryptedTextProps extends HTMLMotionProps<"span"> {
 
 export default function DecryptedText({
 																				text,
-																				speed = 50,
+																				speed = 5,
 																				maxIterations = 10,
 																				sequential = true,
 																				revealDirection = "start",
@@ -77,7 +73,7 @@ export default function DecryptedText({
 		};
 
 		const availableChars = useOriginalCharsOnly
-			? Array.from(new Set(text.split(""))).filter((char) => char !== " ")
+			? Array.from(new Set(text.split(""))).filter((char) => char !== " " && char !== "\n")
 			: characters.split("");
 
 		const shuffleText = (
@@ -87,7 +83,7 @@ export default function DecryptedText({
 			if (useOriginalCharsOnly) {
 				const positions = originalText.split("").map((char, i) => ({
 					char,
-					isSpace: char === " ",
+					isSpace: char === " " || char === "\n",
 					index: i,
 					isRevealed: currentRevealed.has(i),
 				}));
@@ -107,7 +103,7 @@ export default function DecryptedText({
 				let charIndex = 0;
 				return positions
 					.map((p) => {
-						if (p.isSpace) return " ";
+						if (p.isSpace) return p.char; // Keep spaces and newlines
 						if (p.isRevealed) return originalText[p.index];
 						return nonSpaceChars[charIndex++];
 					})
@@ -116,7 +112,7 @@ export default function DecryptedText({
 				return originalText
 					.split("")
 					.map((char, i) => {
-						if (char === " ") return " ";
+						if (char === " " || char === "\n") return char; // Preserve newlines
 						if (currentRevealed.has(i)) return originalText[i];
 						return availableChars[
 							Math.floor(Math.random() * availableChars.length)
@@ -214,20 +210,63 @@ export default function DecryptedText({
 			}
 			: {};
 
+	// Render text with proper line breaks during animation
+	const renderFormattedText = () => {
+		if (!isScrambling || !isHovering) {
+			// Split text by newlines and render each line
+			return displayText.split('\n').map((line, lineIndex) => (
+				<React.Fragment key={lineIndex}>
+					{line}
+					{lineIndex < displayText.split('\n').length - 1 && <br/>}
+				</React.Fragment>
+			));
+		}
+
+		// During animation, maintain line breaks while scrambling
+		return displayText.split('\n').map((line, lineIndex) => (
+			<React.Fragment key={lineIndex}>
+				{line.split('').map((char, charIndex) => {
+					const globalIndex = displayText
+						.split('\n')
+						.slice(0, lineIndex)
+						.reduce((sum, l) => sum + l.length + 1, 0) + charIndex;
+
+					const isRevealed = revealedIndices.has(globalIndex);
+
+					return (
+						<span
+							key={charIndex}
+							className={isRevealed ? className : encryptedClassName}
+							style={{
+								display: 'inline-block',
+								width: '0.6em',
+								textAlign: 'center'
+							}}
+						>
+																				       {char}
+																				      </span>
+					);
+				})}
+				{lineIndex < displayText.split('\n').length - 1 && <br/>}
+			</React.Fragment>
+		));
+	};
+
 	return (
 		<motion.span
 			ref={containerRef}
-			className={`inline-block whitespace-pre-wrap ${parentClassName}`}
+			className={`inline-block ${parentClassName}`}
 			{...hoverProps}
 			{...props}
 			style={{
 				fontFamily: 'monospace',
 				display: 'inline-block',
 				width: '100%',
+				whiteSpace: 'pre-wrap', // Important for preserving line breaks
 				...props.style
 			}}
 		>
-			{/* Screen reader only text - properly hidden visually */}
+			{/* Screen reader only text */}
 			<span className="sr-only" style={{
 				position: 'absolute',
 				width: '1px',
@@ -246,28 +285,12 @@ export default function DecryptedText({
 				style={{
 					display: 'inline-block',
 					width: '100%',
-					minWidth: '100%'
+					minWidth: '100%',
+					whiteSpace: 'pre-wrap' // Ensure line breaks are preserved
 				}}
 			>
-        {displayText.split("").map((char, index) => {
-					const isRevealedOrDone =
-						revealedIndices.has(index) || !isScrambling || !isHovering;
-
-					return (
-						<span
-							key={index}
-							className={isRevealedOrDone ? className : encryptedClassName}
-							style={{
-								display: 'inline-block',
-								width: '0.6em',
-								textAlign: 'center'
-							}}
-						>
-              {char}
-            </span>
-					);
-				})}
-      </span>
+																				    {renderFormattedText()}
+																				   </span>
 		</motion.span>
 	);
 }
