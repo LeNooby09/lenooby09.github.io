@@ -309,7 +309,7 @@ export default function Dither({
 																 waveFrequency = 8.2,
 																 waveAmplitude = 0.2,
 																 waveColor = [0.5, 0.3, 0.7],
-																 colorNum = 18,
+																 colorNum = 5,
 																 pixelSize = 1,
 																 disableAnimation = false,
 																 enableMouseInteraction = true,

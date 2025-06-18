@@ -11,17 +11,17 @@
 }
 
 .text-box {
-	background-color: rgba(0.5, 0.3, 0.7, 0.5);
-	backdrop-filter: blur(5px);
+	background-color: rgba(0.5, 0.3, 0.7, 0.1);
+	backdrop-filter: blur(15px);
 	border-radius: 30px;
 	padding: 2rem;
 	max-width: 80%;
 	text-align: center;
 	color: #e5c0f8;
-	box-shadow: 0 4px 6px rgba(0.5, 0.3, 0.7, 0.1);
+	box-shadow: 6px 4px 10px rgba(0.5, 0.3, 0.7, 0.2);
 	border: 1px solid rgba(255, 255, 255, 0.1);
 	font-family: 'Courier New', Courier, monospace;
-	min-height: 200px; /* Prevent height jumps */
+	min-height: 200px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -33,14 +33,14 @@
 }
 
 .text-box-title {
-	min-height: 3.5rem; /* Ensure consistent height for animated titles */
+	min-height: 3.5rem;
 	display: inline-flex;
 	justify-content: center;
 	align-items: center;
 	width: 100%;
 	margin: 0;
 	padding: 0;
-	overflow: hidden; /* Prevent overflow during animations */
+	overflow: hidden;
 }
 
 .text-box p {
