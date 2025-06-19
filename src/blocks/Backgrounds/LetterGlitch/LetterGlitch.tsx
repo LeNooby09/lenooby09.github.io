@@ -5,10 +5,10 @@
 import {useEffect, useRef} from "react";
 
 const LetterGlitch = ({
-												glitchColors = ["#5724b4", "#a05af6", "#5d0e7c"],
+												glitchColors = ["#4a138a", "#5724b4", "#a05af6", "#5d0e7c"],
 												glitchSpeed = 100,
 												centerVignette = false,
-												outerVignette = false,
+												outerVignette = true,
 												smooth = true,
 											}: {
 	glitchColors: string[];

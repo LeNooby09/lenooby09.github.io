@@ -11,7 +11,6 @@ interface AnimatedTextBoxProps {
 
 export default function AnimatedTextBox({
 																					titleText,
-																					contentText,
 																					className = '',
 																					formattedContent = ''
 																				}: AnimatedTextBoxProps) {
@@ -25,9 +24,6 @@ export default function AnimatedTextBox({
 			}
 			className={className}
 		>
-			<DecryptedText
-				text={contentText}
-			/>
 			{formattedContent && (
 				<div dangerouslySetInnerHTML={{__html: formattedContent}}/>
 			)}
