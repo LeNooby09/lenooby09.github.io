@@ -1,14 +1,15 @@
 .text-container {
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
 	display: flex;
 	justify-content: center;
-	align-items: center;
+	align-items: flex-start;
 	pointer-events: auto;
 	z-index: 10;
+	overflow-y: auto;
 }
 
 .text-box {
@@ -28,6 +29,7 @@
 	justify-content: center;
 	overflow-wrap: break-word;
 	word-wrap: break-word;
+	margin: 4rem auto;
 }
 
 .text-box p {
