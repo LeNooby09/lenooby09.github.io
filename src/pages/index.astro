@@ -4,8 +4,59 @@ import AnimatedTextBox from '../blocks/AnimatedTitle/AnimatedTextBox.tsx';
 import LetterGlitch from "../blocks/Backgrounds/LetterGlitch/LetterGlitch";
 import '../styles/global.css';
 
+const titleText = `
+LeNooby09's site
+==============================
+`
+
 const Formatted = `
-============================== <br/>
+<br/>Hello,
+<br/>I am a caffeine-fueled developer who codes mainly in Kotlin and has an interest in Cybersecurity.
+<br/>My computers all run Arch Linux(btw)
+<br/>
+<br/>==============================
+<br/>GAMES:
+<br/>Hackmud, Bitburner, Minecraft, Stardew Valley, Red Dead Redemption 2, No Mans Sky, Ready or Not
+<br/>
+<br/>==============================
+<br/>SOCIALS:
+<br/>GitHub: <A href="https://github.com/LeNooby09">LeNooby09</A>
+<br/>BlueSky: <A href="https://bsky.app/profile/did:plc:xocoka6dmx74ciqskczoh6ci">@lenooby09.tech</A>
+<A href="https://pds.witchcraft.systems"/><img src="https://ari.express/assets/PWsbutton.png" alt="Powered by witchcraft.systems" style="width: 44px; height: 15.5px" /></A>
+<br/>Signal: <A href="https://signal.me/#eu/NVKWG8sYA6qPwqYvDwxZvZFi8PTNYTvqFtITx0_fEfqP0VkC4fNDU5-Y0zNkSbN9">LeNooby.09</A>
+<br/>Matrix: @lenooby09:matrix.org
+<br/>Keybase: <A href="https://keybase.io/lenooby09">lenooby09</A>
+<br/>Session: 05ba4c3149c2de3b9a3da4726c6d48b4f41d53282eb73beb80de2dab454b5a0f72
+<br/>
+<br/>==============================
+<br/>DONATE:
+<br/><A href="https://kofi.com/lenooby09">Kofi.com</A>
+<br/>
+<br/>[XNO] nano_17376pr3x4m35jxqenm3hs9tg9mc53zg8e35frsq3zta8wdjs8yzpjsumss1
+<br/><A href="https://trocador.app/anonpay?ticker_to=xno&network_to=Mainnet&address=nano_17376pr3x4m35jxqenm3hs9tg9mc53zg8e35frsq3zta8wdjs8yzpjsumss1&ref=sqKNYGZbRl&direct=True&name=LeNooby09">Trocador</A>
+<br/><A href="https://tqzngtf2hybjbexznel6dhgsvbynjzezoybvtv6iofomx7gchqfssgqd.onion/anonpay?ticker_to=xno&network_to=Mainnet&address=nano_17376pr3x4m35jxqenm3hs9tg9mc53zg8e35frsq3zta8wdjs8yzpjsumss1&ref=sqKNYGZbRl&direct=True&name=LeNooby09">Trocador Onion</A>
+<br/>
+<br/>[XMR] 8BDeSxRFDTvZQsEeBBhyCePPVLsDcFkHWZH13TJjGqBX788UcdUgTZjHrf73FUaVfxMBPPQFxAYXob4gfqQrkVDxGFUcQgc
+<br/>
+<br/>==============================
+<br/>Silly goobers:<br/>
+<A href="https://aria.coffee"><img src="https://aria.coffee/static/img/buttons/aria.gif" alt="aria" style="image-rendering: pixelated" /></A>
+<A href="https://holly.lgbt"><img src="https://holly.lgbt/88x31.webp" alt="holly" style="image-rendering: pixelated" /></A>
+<A href="https://meow-d.github.io"><img src="https://meow-d.github.io/assets/images/buttons/meow_d.webp" alt="meow-d" style="image-rendering: pixelated" /></A>
+<A href="https://onz.ee"><img src="https://onz.ee/assets/88x31s/avif/onzecki.avif" alt="onzecki" style="image-rendering: pixelated" /></A>
+<A href="https://hayden.moe"><img src="https://hayden.moe/88x31/hayden.png" alt="hayden" style="image-rendering: pixelated" /></A>
+<br/>
+<br/>==============================
+<br/>PGP Key:
+<br/>Fingerprint: <A href="../files/contact@lenooby09.tech_0xAF194235A39CE88F_public.asc">
+			EB7ABA25332605BFB041A206AF194235A39CE88F</A>
+<br/>==============================
+<br/>SSH Key:
+<br/><A href="../files/id_ed25519_sk.pub">
+			sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC...BHNzaDo= contact@lenooby09.tech</A>
+<br/>AGE compatible SSH key:
+<br/><A href="../files/id_rsa.pub">
+			ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAAIAQDyv...nc7ZnqqKXszY7kIR6DwpQ== for AGE</A>	
 `;
 ---
 
@@ -16,9 +67,6 @@ const Formatted = `
 
 <AnimatedTextBox
 	client:load
-	titleText="LeNooby09's site"
-	contentText={`
-
-`}
+	titleText={titleText}
 	formattedContent={Formatted}
 />
