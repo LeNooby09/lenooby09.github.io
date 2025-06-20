@@ -2,7 +2,7 @@
 	Installed from https://reactbits.dev/ts/default/
 */
 
-import {useEffect, useRef} from "react";
+import React, {useEffect, useRef} from "react";
 
 const LetterGlitch = ({
 												glitchColors = ["#4a138a", "#5724b4", "#a05af6", "#5d0e7c"],
@@ -25,11 +25,13 @@ const LetterGlitch = ({
 			color: string;
 			targetColor: string;
 			colorProgress: number;
+			changed: boolean; // Added to track changed letters
 		}[]
 	>([]);
 	const grid = useRef({columns: 0, rows: 0});
 	const context = useRef<CanvasRenderingContext2D | null>(null);
 	const lastGlitchTime = useRef(Date.now());
+	const canvasDimensions = useRef({ width: 0, height: 0 }); // Cache for canvas dimensions
 
 	const fontSize = 10;
 	const charWidth = fontSize * 0.7;
@@ -149,6 +151,7 @@ const LetterGlitch = ({
 			color: getRandomColor(),
 			targetColor: getRandomColor(),
 			colorProgress: 1,
+			changed: true, // Mark all as changed initially
 		}));
 	};
 
@@ -160,6 +163,12 @@ const LetterGlitch = ({
 
 		const dpr = window.devicePixelRatio || 1;
 		const rect = parent.getBoundingClientRect();
+
+		// Cache the dimensions
+		canvasDimensions.current = {
+			width: rect.width,
+			height: rect.height
+		};
 
 		canvas.width = rect.width * dpr;
 		canvas.height = rect.height * dpr;
@@ -179,16 +188,30 @@ const LetterGlitch = ({
 	const drawLetters = () => {
 		if (!context.current || letters.current.length === 0) return;
 		const ctx = context.current;
-		const {width, height} = canvasRef.current!.getBoundingClientRect();
-		ctx.clearRect(0, 0, width, height);
+
+		// Use cached dimensions instead of calling getBoundingClientRect
+		const {width, height} = canvasDimensions.current;
+
+		// Don't clear entire canvas, only redraw changed letters
 		ctx.font = `${fontSize}px monospace`;
 		ctx.textBaseline = "top";
 
 		letters.current.forEach((letter, index) => {
-			const x = (index % grid.current.columns) * charWidth;
-			const y = Math.floor(index / grid.current.columns) * charHeight;
-			ctx.fillStyle = letter.color;
-			ctx.fillText(letter.char, x, y);
+			// Only redraw if the letter has changed
+			if (letter.changed) {
+				const x = (index % grid.current.columns) * charWidth;
+				const y = Math.floor(index / grid.current.columns) * charHeight;
+
+				// Clear just the area for this letter
+				ctx.clearRect(x, y, charWidth, charHeight);
+
+				// Draw the new letter
+				ctx.fillStyle = letter.color;
+				ctx.fillText(letter.char, x, y);
+
+				// Reset the changed flag
+				letter.changed = false;
+			}
 		});
 	};
 
@@ -203,6 +226,7 @@ const LetterGlitch = ({
 
 			letters.current[index].char = getRandomChar();
 			letters.current[index].targetColor = getRandomColor();
+			letters.current[index].changed = true; // Mark as changed
 
 			if (!smooth) {
 				letters.current[index].color = letters.current[index].targetColor;
@@ -228,6 +252,7 @@ const LetterGlitch = ({
 						endRgb,
 						letter.colorProgress,
 					);
+					letter.changed = true; // Mark as changed when color updates
 					needsRedraw = true;
 				}
 			}
