@@ -1,5 +1,4 @@
 ---
-import Dither from '../blocks/Backgrounds/Dither/Dither.tsx';
 import AnimatedTextBox from '../blocks/AnimatedTitle/AnimatedTextBox.tsx';
 import LetterGlitch from "../blocks/Backgrounds/LetterGlitch/LetterGlitch";
 import '../styles/global.css';
@@ -10,15 +9,6 @@ LeNooby09's site
 `
 
 const Formatted = `
-<script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
-<script>
-  kofiWidgetOverlay.draw('lenooby09', {
-    'type': 'floating-chat',
-    'floating-chat.donateButton.text': 'Support me',
-    'floating-chat.donateButton.background-color': '#323842',
-    'floating-chat.donateButton.text-color': '#fff'
-  });
-</script>
 <br/>#######################################################################################
 <br/># In memory of our neighbor who passed away on Friday, 20th of June 2025 at 12:20 PM. #
 <br/>#######################################################################################
@@ -91,16 +81,129 @@ const Formatted = `
 <iframe src="//incr.easrng.net/badge?key=03dce650b18f1da4ef09e9f021633ea07fe855cb" style="background: url(//incr.easrng.net/bg.gif)" title="increment badge" width="88" height="31" loading="lazy" frameborder="0"></iframe>
 <br/><img src="https://hackatime-badge.hackclub.com/U0922V384CU/site?label=time%20spent%20here" alt="Hackatime button for this site" loading="lazy"/>
 `;
+
+const externalResources = {
+  domains: [
+    "https://storage.ko-fi.com",
+    "https://88x31.nl",
+    "https://aria.coffee",
+    "https://incr.easrng.net",
+    "https://hackatime-badge.hackclub.com",
+    "https://github-readme-stats.hackclub.dev",
+    "https://bsky.app",
+    "https://pds.witchcraft.systems",
+    "https://ari.express",
+  ],
+  imageURLs: [
+    "https://88x31.nl/gifs/antifa.gif",
+    "https://88x31.nl/gifs/fspeech96a.gif",
+    "https://aria.coffee/static/img/88x31/astro.png",
+    "https://aria.coffee/static/img/buttons/aria.gif",
+    "https://holly.lgbt/88x31.webp",
+    "https://meow-d.github.io/assets/images/buttons/meow_d.webp",
+    "https://onz.ee/assets/88x31s/avif/onzecki.avif",
+    "https://hayden.moe/88x31/hayden.png",
+    "https://treatsforzilth.neocities.org/img/88x31_zilth.gif",
+    "https://ari.express/assets/PWsbutton.png"
+  ]
+};
+
+const glitchParams = {
+	glitchColors: ["#4a138a", "#5724b4", "#a05af6", "#5d0e7c"],
+	glitchSpeed: 100,
+	centerVignette: false,
+	outerVignette: true,
+	smooth: true
+};
 ---
 
-<div style={{width: '100%', height: '100%', position: 'fixed', top: 0, left: 0, zIndex: 1}}>
-	<!--Dither client:load/-->
-	<LetterGlitch client:load/>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Personal website of LeNooby09, a caffeine-fueled developer with interest in Cybersecurity, coding in Kotlin on Arch Linux">
+	<title>LeNooby09's site</title>
 
-<AnimatedTextBox
-	client:load
-	titleText={titleText}
-	formattedContent={Formatted}
-  navButtons={}
-/>
+	{externalResources.domains.map(domain => (
+		<>
+			<link rel="dns-prefetch" href={domain} />
+			<link rel="preconnect" href={domain} crossorigin />
+		</>
+	))}
+
+	<link rel="preload" href="/88x31.png" as="image" />
+
+	<script is:inline fetchpriority="high" src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js" defer></script>
+
+	<style is:inline>
+		@font-face {
+			font-family: monospace;
+			font-display: swap;
+		}
+
+		/* Reduce layout shifts with explicit image dimensions */
+		img[width="88"][height="31"] {
+			width: 88px;
+			height: 31px;
+			aspect-ratio: 88/31;
+			image-rendering: pixelated;
+		}
+	</style>
+</head>
+<body>
+	<div class="background-container" style="width: 100%; height: 100%; position: fixed; top: 0; left: 0; z-index: 1">
+		<LetterGlitch
+			client:idle
+			{...glitchParams}
+		/>
+	</div>
+
+	<main style="max-width: 100%; overflow-wrap: break-word;">
+		<AnimatedTextBox
+			client:load
+			titleText={titleText}
+			contentText=""
+			formattedContent={Formatted}
+		/>
+	</main>
+
+	<script is:inline>
+		// Initialize Ko-fi after DOM is fully loaded
+		document.addEventListener('DOMContentLoaded', () => {
+			setTimeout(() => {
+				if (typeof kofiWidgetOverlay !== 'undefined') {
+					kofiWidgetOverlay.draw('lenooby09', {
+						'type': 'floating-chat',
+						'floating-chat.donateButton.text': 'Support me :3',
+						'floating-chat.donateButton.background-color': 'rgba(0.5, 0.3, 0.7, 0.5)',
+						'floating-chat.donateButton.text-color': '#a05af6'
+					});
+				}
+			}, 300);
+		});
+
+		window.addEventListener('load', () => {
+			const observer = new IntersectionObserver((entries) => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						const iframe = entry.target;
+						if (iframe.dataset.src) {
+							iframe.src = iframe.dataset.src;
+							observer.unobserve(iframe);
+						}
+					}
+				});
+			});
+
+			document.querySelectorAll('iframe').forEach(iframe => {
+				if (iframe.src) {
+					iframe.dataset.src = iframe.src;
+					iframe.removeAttribute('src');
+					observer.observe(iframe);
+				}
+			});
+		});
+	</script>
+</body>
+</html>
