@@ -9,3 +9,12 @@ html, body {
 * {
 	font-family: monospace;
 }
+
+a {
+	color: #7228ff;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
