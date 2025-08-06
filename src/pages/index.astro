@@ -53,22 +53,22 @@ const Formatted = `
 <br/>
 <br/>==============================
 <br/>PGP Key:
-<br/>Fingerprint: <A href="/contact@lenooby09.tech_0xAF194235A39CE88F_public.asc">
+<br/>Fingerprint: <A href="/contact@lenooby09.tech_0xAF194235A39CE88F_public.asc" target="_blank">
 			EB7ABA25332605BFB041A206AF194235A39CE88F</A>
 <br/>
 <br/>SSH Key:
-<br/><A href="/id_ed25519_sk.pub">
+<br/><A href="/id_ed25519_sk.pub" target="_blank">
 			sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC...BHNzaDo= contact@lenooby09.tech</A>
 <br/>AGE compatible SSH key:
-<br/><A href="/id_rsa.pub">
+<br/><A href="/id_rsa.pub" target="_blank">
 			ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAAIAQDyv...nc7ZnqqKXszY7kIR6DwpQ== for AGE</A>
 <br/>
 <br/>Minisign Key:
-<br/><A href="/minisign.pub">
+<br/><A href="/minisign.pub" target="_blank">
 			F11CF4D709DE6ECA RWTKbt4J1/Qc8QV6gDKlp+UkIcy+1KHirFbvDQTkGGEu05y475NPYVzq</A>
 <br/>
 <br/>AGE Key:
-<br/><A href="/key.txt"/>
+<br/><A href="/key.txt" target="_blank"/>
 			age1glh80ta28nyr5l37pqa8js8n42qtsehwyyzkt028wv4rs6g3eu5qfty5a6</A>
 <br/>
 <br/>==============================
@@ -84,31 +84,32 @@ const Formatted = `
 <iframe src="//incr.easrng.net/badge?key=03dce650b18f1da4ef09e9f021633ea07fe855cb" style="background: url(//incr.easrng.net/bg.gif)" title="increment badge" width="88" height="31" loading="lazy" frameborder="0"></iframe>
 <br/><img src="https://hackatime-badge.hackclub.com/U0922V384CU/site?label=time%20spent%20here" alt="Hackatime button for this site" loading="lazy"/>
 <A href="https://github.com/LeNooby09/lenooby09.github.io/actions/workflows/astro.yml"><img src="https://github.com/LeNooby09/lenooby09.github.io/actions/workflows/astro.yml/badge.svg" alt="Deploy Astro site to Pages"></A>
+<br><A href="/index.astro.minisig" target="_blank">Signature</A>
 `;
 
 const externalResources = {
-  domains: [
-    "https://storage.ko-fi.com",
-    "https://88x31.nl",
-    "https://aria.coffee",
-    "https://incr.easrng.net",
-    "https://hackatime-badge.hackclub.com",
-    "https://github-readme-stats.hackclub.dev",
-    "https://bsky.app",
-    "https://pds.witchcraft.systems",
-    "https://ari.express",
-  ],
-  imageURLs: [
-    "https://88x31.nl/gifs/antifa.gif",
-    "https://88x31.nl/gifs/fspeech96a.gif",
-    "https://aria.coffee/static/img/88x31/astro.png",
-    "https://aria.coffee/static/img/buttons/aria.gif",
-    "https://holly.lgbt/88x31.webp",
-    "https://meow-d.github.io/assets/images/buttons/meow_d.webp",
-    "https://onz.ee/assets/88x31s/avif/onzecki.avif",
-    "https://hayden.moe/88x31/hayden.png",
-    "https://ari.express/assets/PWsbutton.png"
-  ]
+	domains: [
+		"https://storage.ko-fi.com",
+		"https://88x31.nl",
+		"https://aria.coffee",
+		"https://incr.easrng.net",
+		"https://hackatime-badge.hackclub.com",
+		"https://github-readme-stats.hackclub.dev",
+		"https://bsky.app",
+		"https://pds.witchcraft.systems",
+		"https://ari.express",
+	],
+	imageURLs: [
+		"https://88x31.nl/gifs/antifa.gif",
+		"https://88x31.nl/gifs/fspeech96a.gif",
+		"https://aria.coffee/static/img/88x31/astro.png",
+		"https://aria.coffee/static/img/buttons/aria.gif",
+		"https://holly.lgbt/88x31.webp",
+		"https://meow-d.github.io/assets/images/buttons/meow_d.webp",
+		"https://onz.ee/assets/88x31s/avif/onzecki.avif",
+		"https://hayden.moe/88x31/hayden.png",
+		"https://ari.express/assets/PWsbutton.png"
+	]
 };
 
 const glitchParams = {
@@ -125,17 +126,19 @@ const glitchParams = {
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Personal website of LeNooby09, a caffeine-fueled developer with interest in Cybersecurity, coding in Kotlin on Arch Linux">
+	<meta	name="description"
+				content="Personal website of LeNooby09, a caffeine-fueled developer with interest in Cybersecurity, coding in Kotlin on Arch Linux">
+	</meta>
 	<title>LeNooby09's site</title>
 
 	{externalResources.domains.map(domain => (
 		<>
-			<link rel="dns-prefetch" href={domain} />
-			<link rel="preconnect" href={domain} crossorigin />
+			<link rel="dns-prefetch" href={domain}/>
+			<link rel="preconnect" href={domain} crossorigin/>
 		</>
 	))}
 
-	<link rel="preload" href="/88x31.png" as="image" />
+	<link rel="preload" href="/88x31.png" as="image"/>
 
 	<script is:inline fetchpriority="high" src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js" defer/>
 
@@ -155,58 +158,58 @@ const glitchParams = {
 	</style>
 </head>
 <body>
-	<div class="background-container" style="width: 100%; height: 100%; position: fixed; top: 0; left: 0; z-index: 1">
-		<LetterGlitch
-			client:idle
-			{...glitchParams}
-		/>
-	</div>
+<div class="background-container" style="width: 100%; height: 100%; position: fixed; top: 0; left: 0; z-index: 1;">
+	<LetterGlitch
+		client:idle
+		{...glitchParams}
+	/>
+</div>
 
-	<main style="max-width: 100%; overflow-wrap: break-word;">
-		<AnimatedTextBox
-			client:load
-			titleText={titleText}
-			contentText=""
-			formattedContent={Formatted}
-		/>
-	</main>
+<main style="max-width: 100%; overflow-wrap: break-word;">
+	<AnimatedTextBox
+		client:load
+		titleText={titleText}
+		contentText=""
+		formattedContent={Formatted}
+	/>
+</main>
 
-	<script is:inline>
-		// Initialize Ko-fi after DOM is fully loaded
-		document.addEventListener('DOMContentLoaded', () => {
-			setTimeout(() => {
-				if (typeof kofiWidgetOverlay !== 'undefined') {
-					kofiWidgetOverlay.draw('lenooby09', {
-						'type': 'floating-chat',
-						'floating-chat.donateButton.text': 'Support me :3',
-						'floating-chat.donateButton.background-color': 'rgba(0.5, 0.3, 0.7, 0.5)',
-						'floating-chat.donateButton.text-color': '#a05af6'
-					});
-				}
-			}, 300);
-		});
-
-		window.addEventListener('load', () => {
-			const observer = new IntersectionObserver((entries) => {
-				entries.forEach(entry => {
-					if (entry.isIntersecting) {
-						const iframe = entry.target;
-						if (iframe.dataset.src) {
-							iframe.src = iframe.dataset.src;
-							observer.unobserve(iframe);
-						}
-					}
+<script is:inline>
+	// Initialize Ko-fi after DOM is fully loaded
+	document.addEventListener('DOMContentLoaded', () => {
+		setTimeout(() => {
+			if ('undefined' !== typeof kofiWidgetOverlay) {
+				kofiWidgetOverlay.draw('lenooby09', {
+					'type': 'floating-chat',
+					'floating-chat.donateButton.text': 'Support me :3',
+					'floating-chat.donateButton.background-color': 'rgba(0.5, 0.3, 0.7, 0.5)',
+					'floating-chat.donateButton.text-color': '#a05af6'
 				});
-			});
+			}
+		}, 300);
+	});
 
-			document.querySelectorAll('iframe').forEach(iframe => {
-				if (iframe.src) {
-					iframe.dataset.src = iframe.src;
-					iframe.removeAttribute('src');
-					observer.observe(iframe);
+	window.addEventListener('load', () => {
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					const iframe = entry.target;
+					if (iframe.dataset.src) {
+						iframe.src = iframe.dataset.src;
+						observer.unobserve(iframe);
+					}
 				}
 			});
 		});
-	</script>
+
+		document.querySelectorAll('iframe').forEach(iframe => {
+			if (iframe.src) {
+				iframe.dataset.src = iframe.src;
+				iframe.removeAttribute('src');
+				observer.observe(iframe);
+			}
+		});
+	});
+</script>
 </body>
 </html>
